@@ -1,0 +1,3 @@
+baseURL = 'https://blog.niuniu.space/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
