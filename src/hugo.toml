@@ -1,3 +1,40 @@
 baseURL = 'https://blog.niuniu.space/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
+theme = 'hugo-coder'
+
+[pagination]
+pagerSize = 10
+
+[params]
+# license = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
+author = "Xu ZhiYi"
+info = "Full Stack DevOps and Magician"
+description = "Xu ZhiYi's personal website"
+keywords = "blog,developer,personal"
+# avatarurl = "images/avatar.jpg"
+#gravatar = "john.doe@example.com"
+
+# faviconSVG = "/img/favicon.svg"
+# favicon_32 = "/img/favicon-32x32.png"
+# favicon_16 = "/img/favicon-16x16.png"
+
+since = 2025
+
+enableTwemoji = true
+
+colorScheme = "auto"
+hidecolorschemetoggle = false
+
+# customCSS = ["css/custom.css"]
+# customSCSS = ["scss/custom.scss"]
+# customJS = ["js/custom.js"]
+
+[[menu.main]]
+name = "Blog"
+weight = 1
+url = "posts/"
+[[menu.main]]
+name = "About"
+weight = 2
+url = "about/"
