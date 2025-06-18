@@ -1,7 +1,7 @@
 +++ 
-draft = true
+draft = false
 date = 2025-06-17T20:09:57+08:00
-title = "写一个SmartSql的扩展方法"
+title = "SmartSql 多数据库场景下简化 Repository 命名与准确加载 XML SQL 的扩展方法"
 description = ""
 slug = ""
 authors = ['Xu ZhiYi']
@@ -11,15 +11,17 @@ externalLink = ""
 series = []
 +++
 
-# 写一个SmartSql的扩展方法
+# SmartSql 多数据库场景下简化 Repository 命名与准确加载 XML SQL 的扩展方法
+
+在多数据库项目中，我们通常会使用多个 SmartSql 实例。每个实例又管理着众多对应数据表的 Repository。
+
+默认的 ```AddRepositoryFromAssembly()``` 方法加载 Repository 时，仅能通过类名定位对应 Scope 的 XML 文件。这导致了一个问题：为了区分不同数据库表对应的 Repository 类，我们不得不使用冗长的类名，严重影响了开发体验。
+
+为此，我编写了一个自定义扩展方法作为替代方案。该方法的核心是：通过反射获取 Repository 类的完整名称 (FullName)。由于 SmartSql 的 Scope 部分不支持点号 (```.```)，需要将 FullName 中的点号替换为下划线 (```_```)。最后，使用转换后的名称去加载对应 Scope 的 XML 文件。
+
+这种方式的优势在于：位于不同类库中的 Repository，现在可以使用相同或更简短的类名了。
 
 ```C#
-/// <summary>
-/// 注入仓储结构 By 程序集
-/// </summary>
-/// <param name="builder"></param>
-/// <param name="setupOptions"></param>
-/// <returns></returns>
 public static SmartSqlDIBuilder AddRepositoryFromAssemblyByFullName(this SmartSqlDIBuilder builder, Action<AssemblyAutoRegisterOptions> setupOptions)
 {
     builder.AddRepositoryFactory();
