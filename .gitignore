@@ -1,5 +1,5 @@
 .idea
-**/themes/
+# **/themes/
 exampleSite/public/
 exampleSite/resources/
 *.lock
