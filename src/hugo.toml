@@ -1,4 +1,4 @@
-baseURL = 'https://blog.niuniu.space/'
+baseURL = 'https://niuniu.space/'
 languageCode = 'en-us'
 title = 'Xu ZhiYi'
 theme = 'hugo-coder'
@@ -9,7 +9,7 @@ pagerSize = 10
 [params]
 # license = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
 author = "Xu ZhiYi"
-info = "Full Stack Dev: C++/Python RL to Cloud Native."
+info = "Full Stack Dev: C-like Languages to Cloud Native."
 description = "Xu ZhiYi's personal website"
 keywords = "blog,developer,personal"
 # avatarurl = "images/avatar.jpg"
