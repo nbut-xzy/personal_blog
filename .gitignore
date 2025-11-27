@@ -5,3 +5,4 @@ exampleSite/resources/
 *.lock
 public
 resources
+*.tar
